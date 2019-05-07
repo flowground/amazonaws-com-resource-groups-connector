@@ -1,0 +1,244 @@
+{
+    "title": "AWS Resource Groups",
+    "description": "<fullname>AWS Resource Groups</fullname> <p>AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances, Amazon Relational Database Service databases, and Amazon S3 buckets into groups using criteria that you define as tags. A resource group is a collection of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions, application layers, or virtually any criteria. Resource groups enable you to automate management tasks, such as those in AWS Systems Manager Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged resources also let you quickly view a custom console in AWS Systems Manager that shows AWS Config compliance and other monitoring data about member resources.</p> <p>To create a resource group, build a resource query, and specify tags that identify the criteria that members of the group have in common. Tags are key-value pairs.</p> <p>For more information about Resource Groups, see the <a href=\"https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html\">AWS Resource Groups User Guide</a>.</p> <p>AWS Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.</p> <ul> <li> <p>Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities</p> </li> <li> <p>Applying, editing, and removing tags from resource groups</p> </li> <li> <p>Resolving resource group member ARNs so they can be returned as search results</p> </li> <li> <p>Getting data about resources that are members of a group</p> </li> <li> <p>Searching AWS resources based on a resource query</p> </li> </ul>",
+    "docsUrl": "https://docs.aws.amazon.com/resource-groups/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/resource-groups/2017-11-27/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://resource-groups.amazonaws.com/",
+                    "http://resource-groups.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "CreateGroup": {
+            "main": "./lib/actions/CreateGroup.js",
+            "title": "Creates a group with a specified name, description, and resource query.",
+            "description": "Creates a group with a specified name, description, and resource query.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListGroups": {
+            "main": "./lib/actions/ListGroups.js",
+            "title": "Returns a list of existing resource groups in your account.",
+            "description": "Returns a list of existing resource groups in your account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteGroup": {
+            "main": "./lib/actions/DeleteGroup.js",
+            "title": "Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.",
+            "description": "Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetGroup": {
+            "main": "./lib/actions/GetGroup.js",
+            "title": "Returns information about a specified resource group.",
+            "description": "Returns information about a specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateGroup": {
+            "main": "./lib/actions/UpdateGroup.js",
+            "title": "Updates an existing group with a new or changed description. You cannot update the name of a resource group.",
+            "description": "Updates an existing group with a new or changed description. You cannot update the name of a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetGroupQuery": {
+            "main": "./lib/actions/GetGroupQuery.js",
+            "title": "Returns the resource query associated with the specified resource group.",
+            "description": "Returns the resource query associated with the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetGroupQuery.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateGroupQuery": {
+            "main": "./lib/actions/UpdateGroupQuery.js",
+            "title": "Updates the resource query of a group.",
+            "description": "Updates the resource query of a group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateGroupQuery.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListGroupResources": {
+            "main": "./lib/actions/ListGroupResources.js",
+            "title": "Returns a list of ARNs of resources that are members of a specified resource group.",
+            "description": "Returns a list of ARNs of resources that are members of a specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListGroupResources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SearchResources": {
+            "main": "./lib/actions/SearchResources.js",
+            "title": "Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.",
+            "description": "Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SearchResources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetTags": {
+            "main": "./lib/actions/GetTags.js",
+            "title": "Returns a list of tags that are associated with a resource, specified by an ARN.",
+            "description": "Returns a list of tags that are associated with a resource, specified by an ARN.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Untag": {
+            "main": "./lib/actions/Untag.js",
+            "title": "Deletes specified tags from a specified resource.",
+            "description": "Deletes specified tags from a specified resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Untag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Tag": {
+            "main": "./lib/actions/Tag.js",
+            "title": "Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.",
+            "description": "Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Tag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
