@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) AWS Resource Groups MSP Connector
+# ![LOGO](logo.png) AWS Resource Groups **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the AWS Resource Groups API (version 2017-11-27).
+A generated **flow**ground connector for the AWS Resource Groups API (version 2017-11-27).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/resource-groups/2017-11-27/swagger.json<br/>
-Generated at: 2019-05-07T11:16:30+03:00
+Generated at: 2019-05-07T17:36:12+03:00
 
 ## API Description
 
@@ -175,7 +175,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-resource-groups-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-resource-groups-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
