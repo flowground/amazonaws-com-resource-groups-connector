@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the AWS Resource Groups API (version 2017-11-27).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/resource-groups/2017-11-27/swagger.json<br/>
-Generated at: 2019-05-07T17:36:12+03:00
+Generated at: 2019-07-08T14:13:17+03:00
 
 ## API Description
 
@@ -17,7 +17,8 @@ Supported authorization schemes:
 - API Key
 ## Actions
 
-### Creates a group with a specified name, description, and resource query.
+### CreateGroup
+> Creates a group with a specified name, description, and resource query.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -30,11 +31,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns a list of existing resource groups in your account.
+### ListGroups
+> Returns a list of existing resource groups in your account.<br/>
 
 #### Input Parameters
-* `MaxResults` - _optional_ - Pagination limit
-* `NextToken` - _optional_ - Pagination token
+* `MaxResults` - _optional_ - Pagination limit<br/>
+* `NextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -43,7 +45,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.
+### DeleteGroup
+> Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.<br/>
 
 #### Input Parameters
 * `GroupName` - _required_
@@ -56,7 +59,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns information about a specified resource group.
+### GetGroup
+> Returns information about a specified resource group.<br/>
 
 #### Input Parameters
 * `GroupName` - _required_
@@ -69,7 +73,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates an existing group with a new or changed description. You cannot update the name of a resource group.
+### UpdateGroup
+> Updates an existing group with a new or changed description. You cannot update the name of a resource group.<br/>
 
 #### Input Parameters
 * `GroupName` - _required_
@@ -82,7 +87,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns the resource query associated with the specified resource group.
+### GetGroupQuery
+> Returns the resource query associated with the specified resource group.<br/>
 
 #### Input Parameters
 * `GroupName` - _required_
@@ -95,7 +101,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Updates the resource query of a group.
+### UpdateGroupQuery
+> Updates the resource query of a group.<br/>
 
 #### Input Parameters
 * `GroupName` - _required_
@@ -108,11 +115,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns a list of ARNs of resources that are members of a specified resource group.
+### ListGroupResources
+> Returns a list of ARNs of resources that are members of a specified resource group.<br/>
 
 #### Input Parameters
-* `MaxResults` - _optional_ - Pagination limit
-* `NextToken` - _optional_ - Pagination token
+* `MaxResults` - _optional_ - Pagination limit<br/>
+* `NextToken` - _optional_ - Pagination token<br/>
 * `GroupName` - _required_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -121,11 +129,12 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+### SearchResources
+> Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.<br/>
 
 #### Input Parameters
-* `MaxResults` - _optional_ - Pagination limit
-* `NextToken` - _optional_ - Pagination token
+* `MaxResults` - _optional_ - Pagination limit<br/>
+* `NextToken` - _optional_ - Pagination token<br/>
 * `X-Amz-Content-Sha256` - _optional_
 * `X-Amz-Date` - _optional_
 * `X-Amz-Algorithm` - _optional_
@@ -134,7 +143,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Returns a list of tags that are associated with a resource, specified by an ARN.
+### GetTags
+> Returns a list of tags that are associated with a resource, specified by an ARN.<br/>
 
 #### Input Parameters
 * `Arn` - _required_
@@ -147,7 +157,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Deletes specified tags from a specified resource.
+### Untag
+> Deletes specified tags from a specified resource.<br/>
 
 #### Input Parameters
 * `Arn` - _required_
@@ -160,7 +171,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.
+### Tag
+> Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.<br/>
 
 #### Input Parameters
 * `Arn` - _required_

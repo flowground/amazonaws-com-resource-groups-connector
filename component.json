@@ -1,6 +1,6 @@
 {
     "title": "AWS Resource Groups",
-    "description": "<fullname>AWS Resource Groups</fullname> <p>AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances, Amazon Relational Database Service databases, and Amazon S3 buckets into groups using criteria that you define as tags. A resource group is a collection of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions, application layers, or virtually any criteria. Resource groups enable you to automate management tasks, such as those in AWS Systems Manager Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged resources also let you quickly view a custom console in AWS Systems Manager that shows AWS Config compliance and other monitoring data about member resources.</p> <p>To create a resource group, build a resource query, and specify tags that identify the criteria that members of the group have in common. Tags are key-value pairs.</p> <p>For more information about Resource Groups, see the <a href=\"https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html\">AWS Resource Groups User Guide</a>.</p> <p>AWS Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.</p> <ul> <li> <p>Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities</p> </li> <li> <p>Applying, editing, and removing tags from resource groups</p> </li> <li> <p>Resolving resource group member ARNs so they can be returned as search results</p> </li> <li> <p>Getting data about resources that are members of a group</p> </li> <li> <p>Searching AWS resources based on a resource query</p> </li> </ul>",
+    "description": "AWS Resource Groups AWS Resource Groups lets you organize AWS resources such as\nAmazon EC2 instances, Amazon Relational Database Service databases, and Amazon\nS3 buckets into groups using criteria that you define as tags. A resource group\nis a collection of resources that match the resource types specified in a query,\nand share one or more tags or portions of tags. You can create a group of\nresources based on their roles in your cloud infrastructure, lifecycle stages,\nregions, application layers, or virtually any criteria. Resource groups enable\nyou to automate management tasks, such as those in AWS Systems Manager\nAutomation documents, on tag-related resources in AWS Systems Manager. Groups of\ntagged resources also let you quickly view a custom console in AWS Systems\nManager that shows AWS Config compliance and other monitoring data about member\nresources.\n\nTo create a resource group, build a resource query, and specify tags that\nidentify the criteria that members of the group have in common. Tags are\nkey-value pairs.\n\nFor more information about Resource Groups, see the AWS Resource Groups User\nGuide [https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html].\n\nAWS Resource Groups uses a REST-compliant API that you can use to perform the\nfollowing types of operations.\n\n *  Create, Read, Update, and Delete (CRUD) operations on resource groups and\n   resource query entities\n   \n   \n *  Applying, editing, and removing tags from resource groups\n   \n   \n *  Resolving resource group member ARNs so they can be returned as search\n   results\n   \n   \n *  Getting data about resources that are members of a group\n   \n   \n *  Searching AWS resources based on a resource query",
     "docsUrl": "https://docs.aws.amazon.com/resource-groups/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/resource-groups/2017-11-27/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "CreateGroup": {
             "main": "./lib/actions/CreateGroup.js",
-            "title": "Creates a group with a specified name, description, and resource query.",
+            "title": "CreateGroup",
             "description": "Creates a group with a specified name, description, and resource query.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "ListGroups": {
             "main": "./lib/actions/ListGroups.js",
-            "title": "Returns a list of existing resource groups in your account.",
+            "title": "ListGroups",
             "description": "Returns a list of existing resource groups in your account.",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "DeleteGroup": {
             "main": "./lib/actions/DeleteGroup.js",
-            "title": "Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.",
+            "title": "DeleteGroup",
             "description": "Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "GetGroup": {
             "main": "./lib/actions/GetGroup.js",
-            "title": "Returns information about a specified resource group.",
+            "title": "GetGroup",
             "description": "Returns information about a specified resource group.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "UpdateGroup": {
             "main": "./lib/actions/UpdateGroup.js",
-            "title": "Updates an existing group with a new or changed description. You cannot update the name of a resource group.",
+            "title": "UpdateGroup",
             "description": "Updates an existing group with a new or changed description. You cannot update the name of a resource group.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "GetGroupQuery": {
             "main": "./lib/actions/GetGroupQuery.js",
-            "title": "Returns the resource query associated with the specified resource group.",
+            "title": "GetGroupQuery",
             "description": "Returns the resource query associated with the specified resource group.",
             "fields": {
                 "verbose": {
@@ -140,7 +140,7 @@
         },
         "UpdateGroupQuery": {
             "main": "./lib/actions/UpdateGroupQuery.js",
-            "title": "Updates the resource query of a group.",
+            "title": "UpdateGroupQuery",
             "description": "Updates the resource query of a group.",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "ListGroupResources": {
             "main": "./lib/actions/ListGroupResources.js",
-            "title": "Returns a list of ARNs of resources that are members of a specified resource group.",
+            "title": "ListGroupResources",
             "description": "Returns a list of ARNs of resources that are members of a specified resource group.",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "SearchResources": {
             "main": "./lib/actions/SearchResources.js",
-            "title": "Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.",
+            "title": "SearchResources",
             "description": "Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "GetTags": {
             "main": "./lib/actions/GetTags.js",
-            "title": "Returns a list of tags that are associated with a resource, specified by an ARN.",
+            "title": "GetTags",
             "description": "Returns a list of tags that are associated with a resource, specified by an ARN.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "Untag": {
             "main": "./lib/actions/Untag.js",
-            "title": "Deletes specified tags from a specified resource.",
+            "title": "Untag",
             "description": "Deletes specified tags from a specified resource.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "Tag": {
             "main": "./lib/actions/Tag.js",
-            "title": "Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.",
+            "title": "Tag",
             "description": "Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.",
             "fields": {
                 "verbose": {
